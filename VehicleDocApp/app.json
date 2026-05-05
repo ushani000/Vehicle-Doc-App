@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "VehicleDocApp",
+    "slug": "VehicleDocApp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan vehicle documents.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select photos.",
+        "NSPhotoLibraryAddUsageDescription": "This app needs permission to save photos to your library."
+      }
+    },
+    "android": {
+      "package": "com.anonymous.VehicleDocApp",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"],
+        "softwareKeyboardLayoutMode": "resize"
+
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "documentPickerPermission": "Allow $(PRODUCT_NAME) to access your documents"
+        }
+      ],
+      [
+        "expo-file-system",
+        {
+          "fileSystemPermission": "Allow $(PRODUCT_NAME) to access your files"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "imagePickerPermission": "Allow $(PRODUCT_NAME) to access your photos"
+        }
+      ]
+    ]
+  }
+}
